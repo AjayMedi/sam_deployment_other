@@ -14,4 +14,4 @@ jobs:
 
       # Reference the reusable workflow from sai-test repository
       - name: Trigger sai-test/main.yml
-        uses: sam_deployment/.github/workflows/main.yml@main
+        uses: AjayMedi/sam_deployment/.github/workflows/main.yml@main
