@@ -1,4 +1,4 @@
-name: Deploy SAM Templates
+name: Deploy SAM Template
 
 on:
   push:
