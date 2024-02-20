@@ -12,6 +12,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # Reference the reusable workflow from sai-test repository
+  trigger_sai_test_workflow: # Define a separate job to trigger the sai-test workflow
+    runs-on: ubuntu-latest
+    needs: deploy # Ensure this job runs after the deploy job
+    steps:
       - name: Trigger sai-test/main.yml
         uses: AjayMedi/sam_deployment/.github/workflows/main.yml@main
