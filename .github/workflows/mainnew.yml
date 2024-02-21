@@ -1,9 +1,7 @@
 name: Deploy SAM Template
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   Checkout:
