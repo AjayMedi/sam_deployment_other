@@ -6,15 +6,13 @@ on:
       - main
 
 jobs:
-  deploy:
+  Checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
   trigger_sai_test_workflow: # Define a separate job to trigger the sai-test workflow
-    runs-on: ubuntu-latest
-    needs: deploy # Ensure this job runs after the deploy job
-    steps:
-      - name: Trigger sai-test/main.yml
-        uses: AjayMedi/sam_deployment/.github/workflows/main.yml@main
+    needs: Checkout # Ensure this job runs after the deploy job
+    name: deploy to aws
+    uses: AjayMedi/sam_deployment/.github/workflows/main.yml@main
